@@ -4,6 +4,12 @@ def main():
   book = get_text(book_path)
   word_count = count_words(book)
   char_dict = char_count(book)
+  print("--- Begin report of books/frankenstein.txt ---")
+  print(word_count," words found in the document")
+  print("")
+  for entry in char_dict:
+    print(f"The'{entry['letter']}' character was found {entry['times']} times")
+  print("--- End report ---")
   
 
 
@@ -40,9 +46,9 @@ def char_count(book):
       temp = {"letter":entry,"times":dict[entry]}
       list_of_dicts.append(temp)
   list_of_dicts.sort(reverse=True, key=sort_on)
-  print(list_of_dicts)    
+  return (list_of_dicts)    
 
 def sort_on(dict):
   return dict["times"]
 
-char_count(get_text("books/frankenstein.txt"))  
+main()
