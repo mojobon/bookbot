@@ -1,6 +1,6 @@
 
 def main():
-  book_path = "books/frankenstein.txt"
+  book_path = "/root/workspace/github.com/mojobon/bookbot/books/frankenstein.txt"
   book = get_text(book_path)
   word_count = count_words(book)
   char_dict = char_count(book)
